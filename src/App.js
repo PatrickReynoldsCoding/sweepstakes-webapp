@@ -42,9 +42,8 @@ function App() {
   const {
     register,
     handleSubmit,
-    setValues,
     watch,
-    formState: { errors, isSubmitting, isDirty, isValid },
+    formState: { errors, isValid },
   } = useForm({
     mode: "onChange",
   });
@@ -107,7 +106,7 @@ function App() {
                     required: true,
                     validate: (val) => {
                       if (watch("password") != val) {
-                        return "Your passwords do no match";
+                        return false;
                       }
                     },
                   })}
