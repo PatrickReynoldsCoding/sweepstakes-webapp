@@ -1,13 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./App.css";
 
-
 // Components
 import Registration from "./components/Registration";
-
+import Welcome from "./components/Welcome";
 // import { db } from "./firebase-config";
 // import {
 //   collection,
@@ -20,7 +19,6 @@ import Registration from "./components/Registration";
 
 //functions
 const teamPicker = require("./functions/teamPicker");
-
 
 //dummyData
 const teams = [
@@ -45,11 +43,10 @@ const teams = [
 console.log(teamPicker(teams));
 
 function App() {
-
   return (
     <BrowserRouter>
-
       <Routes>
+        <Route path="/" element={<Welcome />} />
         <Route path="/registration" element={<Registration />} />
       </Routes>
     </BrowserRouter>

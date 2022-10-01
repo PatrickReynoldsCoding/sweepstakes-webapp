@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import "../App.css";
 
-
 function Registration() {
   const {
     register,

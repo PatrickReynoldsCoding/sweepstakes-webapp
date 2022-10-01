@@ -1,7 +1,6 @@
-
 // team picker
 
-  const teamPicker = (teams) => {
+const teamPicker = (teams) => {
   const availibleTeams = teams.filter((team) => team.availible);
 
   const randomTeam =
@@ -9,6 +8,5 @@
 
   return randomTeam;
 };
-
 
 module.exports = teamPicker;
