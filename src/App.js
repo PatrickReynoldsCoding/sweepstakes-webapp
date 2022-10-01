@@ -12,6 +12,9 @@ import "./App.css";
 //   doc,
 // } from "firebase/firestore";
 
+//functions
+const teamPicker = require("./functions/teamPicker");
+
 //dummyData
 const teams = [
   {
@@ -31,19 +34,15 @@ const teams = [
     availible: true,
   },
 ];
-// team picker
-const availibleTeams = teams.filter((team) => team.availible);
 
-const randomTeam =
-  availibleTeams[Math.floor(Math.random() * availibleTeams.length)];
-console.log(randomTeam);
+console.log(teamPicker(teams));
 
 function App() {
   const {
     register,
     handleSubmit,
     watch,
-    formState: { errors, isValid },
+    formState: { isValid },
   } = useForm({
     mode: "onChange",
   });
@@ -92,9 +91,9 @@ function App() {
                   placeholder="Enter your password"
                   {...register("password", { required: true })}
                 />
-                {errors?.password?.type === "required" && (
+                {/* {errors?.password?.type === "required" && (
                   <p>This field is required</p>
-                )}
+                )} */}
               </div>
               {/* confirm password */}
               <div className="input-box">
@@ -111,9 +110,9 @@ function App() {
                     },
                   })}
                 />
-                {errors?.password_repeat?.type === "required" && (
+                {/* {errors?.password_repeat?.type === "required" && (
                   <p>This field is required</p>
-                )}
+                )} */}
               </div>
             </div>
             {watch("password_repeat") !== watch("password") && (
