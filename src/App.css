@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-image: url('./images/FIFA_Qatar_naslovna.png');
+  background-image: url("./images/FIFA_Qatar_naslovna.png");
   background-size: c;
   background-position: center;
   background-repeat: no-repeat;
@@ -35,19 +35,29 @@ body {
   text-align: center;
 }
 
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  color: #9b59b6;
+}
 
-
-.regButton {
+.button {
   max-width: 300px;
   width: 80%;
-  background-color: #0B71F1;
+  background-color: #0b71f1;
   margin-top: 10px;
   padding: 15px 30px;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   text-align: center;
+  text-decoration: none;
 }
+
+.submitButton::hidden {
+  display: none;
+}
+
 .regButton:hover {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   cursor: pointer;
@@ -125,8 +135,8 @@ form .button {
   height: 45px;
   margin: 35px 0;
 }
-form .button input {
-  height: 100%;
+form .submitButton input {
+  height: auto;
   width: 100%;
   border-radius: 5px;
   border: none;

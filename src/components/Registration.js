@@ -6,14 +6,22 @@ function Registration() {
     register,
     handleSubmit,
     watch,
-    formState: { isValid },
+    formState: { isValid, errors },
   } = useForm({
     mode: "onChange",
   });
 
+  //Validates Password
+  const validatePassword = (val) => {
+    if (watch("password") != val) {
+      return false;
+    }
+  };
+
+  // Sends data after form is complete
   const onSubmit = (data) => {
     console.log(data);
-  }; // your form submit function which will invoke after successful validation
+  };
 
   return (
     <>
@@ -21,13 +29,7 @@ function Registration() {
         <div className="title">2022 World Cup Sweepstakes</div>
         <div className="content">
           {/* change action to redirect */}
-          <form
-            onSubmit={(e) => {
-              handleSubmit(onSubmit)(e)
-                // you will have to catch those error and handle them
-                .catch(() => {});
-            }}
-          >
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="user-details">
               {/* name */}
               <div className="input-box">
@@ -67,11 +69,7 @@ function Registration() {
                   placeholder="Confirm your password"
                   {...register("password_repeat", {
                     required: true,
-                    validate: (val) => {
-                      if (watch("password") != val) {
-                        return false;
-                      }
-                    },
+                    validate: (val) => validatePassword(val),
                   })}
                 />
                 {/* {errors?.password_repeat?.type === "required" && (
@@ -82,8 +80,8 @@ function Registration() {
             {watch("password_repeat") !== watch("password") && (
               <p>password do not match</p>
             )}
-            <div className="button">
-              <input type="submit" value="Register" hidden={!isValid} />
+            <div className="submitButton">
+              <input type="submit" value="Register" disabled={!isValid} />
             </div>
           </form>
         </div>

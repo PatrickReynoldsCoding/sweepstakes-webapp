@@ -9,10 +9,25 @@ export default function Welcome() {
           Chowie and Paddy welcome you to participate in the 2022 world cup
           sweepstakes!
         </div>
-        <Link to="/registration">
-          <button className="regButton" action={'/registration'}>Register</button>
-        </Link>   
- </section>
+        <div className="buttonContainer">
+          <Link
+            to="/registration"
+            style={{ textDecoration: "none", color: "none" }}
+          >
+            <div className="button" action={"/registration"}>
+              Register
+            </div>
+          </Link>
+          <Link
+            to="/registration"
+            style={{ textDecoration: "none", color: "none" }}
+          >
+            <div className="button" action={"/"}>
+              login
+            </div>
+          </Link>
+        </div>
+      </section>
     </>
   );
 }
