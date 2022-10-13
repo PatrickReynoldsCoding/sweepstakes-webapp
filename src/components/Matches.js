@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Matches.css";
 
 
@@ -6,11 +6,12 @@ import "./Matches.css";
 import { login } from "../functions/worldCupApi/login";
 
 export default function Matches() {
-
+const [token, setToken] = useState("")
 
   useEffect(() => {
     login()
-
+    .then(res => setToken(res))
+    console.log(token)
   }, []);
 
   return <div></div>;
