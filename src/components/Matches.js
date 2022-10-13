@@ -15,16 +15,18 @@ export default function Matches() {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
         },
-      });
+      
+      })      
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });;
     } catch (err) {}
   };
 
   useEffect(() => {
     login()
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+
   }, []);
 
   return <div></div>;
