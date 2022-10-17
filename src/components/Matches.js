@@ -45,7 +45,10 @@ const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ3OGJiYWRhYTlh
 
   useEffect(() => {
 
-  const test = getToken().then((res) => console.log(res))
+ getToken()
+  .then((res) => getMatchData(res.data.token))
+  .then(setMatchData)
+  .catch(console.error)
 // getMatchData(token)
   }, []);
 
