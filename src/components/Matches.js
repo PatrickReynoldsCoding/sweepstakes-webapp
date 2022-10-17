@@ -1,0 +1,50 @@
+import React, { useEffect, useState } from "react";
+import "./Matches.css";
+
+const getMatchData = async (token) => {
+  // console.log(`hello ${token}`)
+
+  try {
+    return fetch("/match", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers":
+          "Origin, X-Requested-With, Content-Type, Accept",
+      },
+    }).then((res) => res.json());
+  } catch (err) {}
+};
+
+const getToken = async () => {
+  return fetch("/user/login", {
+    method: "POST",
+    body: JSON.stringify({
+      email: "patrickreynoldscoding@gmail.com",
+      password: "password",
+    }),
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers":
+        "Origin, X-Requested-With, Content-Type, Accept",
+    },
+  }).then((res) => res.json());
+};
+
+export default function Matches() {
+  const [matchData, setMatchData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getToken()
+      .then((res) => getMatchData(res.data.token))
+      .then((res) => setMatchData(res.data))
+      .then(() => setLoading(false))
+      .catch(console.error);
+  }, []);
+
+  return <div>{loading ? "loading" : JSON.stringify(matchData)}</div>;
+}
