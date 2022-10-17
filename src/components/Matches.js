@@ -6,32 +6,36 @@ import { login } from "../functions/worldCupApi/login";
 
 export default function Matches() {
   const [token, setToken] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    // console.log(token);
 
-    // const login = async () => {
-    //   try {
-    //     const res = await fetch("/user/login", {
-    //       method: "POST",
-    //       body: JSON.stringify({
-    //         email: "patrickreynoldscoding@gmail.com",
-    //         password: "password",
-    //       }),
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //         "Access-Control-Allow-Origin": "*",
-    //         "Access-Control-Allow-Headers":
-    //           "Origin, X-Requested-With, Content-Type, Accept",
-    //       },
-    //     })
-    //       .then((res) => res.json())
-    //       .then((data) => {
-    //         setToken(data);
-    //       });
-    //   } catch (err) {}
+    const login = async () => {
+      try {
+        const res = await fetch("/user/login", {
+          method: "POST",
+          body: JSON.stringify({
+            email: "patrickreynoldscoding@gmail.com",
+            password: "password",
+          }),
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers":
+              "Origin, X-Requested-With, Content-Type, Accept",
+          },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            setToken(data.data.token);
+            setIsLoading(true)
+            
+          });
+      } catch (err) {}
+      }
+
       const getMatchData = async () => {
-        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ3OGJiYWRhYTlhZmYzZTc1YTRmNzkiLCJpYXQiOjE2NjU2NDUxNzEsImV4cCI6MTY2NTczMTU3MX0.6vkgTRzIH5_1crSuI7wfIPWSlkvxT06WXHVhi4Hl0Pk"
+        console.log(`hello ${token}`)
+        // const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ3OGJiYWRhYTlhZmYzZTc1YTRmNzkiLCJpYXQiOjE2NjU5NzYxODgsImV4cCI6MTY2NjA2MjU4OH0.dZjnJb8R9N5nKtWPSbMkpIBMZm2duYYnmryOVWqrrqw"
         try {
           const res = await fetch("/match", {
             method: "GET",
@@ -49,13 +53,15 @@ export default function Matches() {
             });
         } catch (err) {}
       };
-      getMatchData();
-    // };
 
-    // login();
+
+  useEffect(() => {
+    login()
+    getMatchData()
   }, []);
 
-  return <div></div>;
+  return <div>
+    {isLoading ? token : "loading" }
+        </div>;
 
-  return <div>Matches</div>;
 }
