@@ -44,7 +44,9 @@ export default function Matches() {
 const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ3OGJiYWRhYTlhZmYzZTc1YTRmNzkiLCJpYXQiOjE2NjU5ODkzNTcsImV4cCI6MTY2NjA3NTc1N30.4xaff7lqxqT38rvO-01xcwPhxxgtw7-_Yq8YzqJVfXU"        
 
   useEffect(() => {
-getMatchData(token)
+
+  const test = getToken().then((res) => console.log(res))
+// getMatchData(token)
   }, []);
 
   return <div>{matchData}</div>;
