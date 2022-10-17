@@ -34,8 +34,8 @@ export default function Matches() {
       }
 
       const getMatchData = async () => {
-        console.log(`hello ${token}`)
-        // const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ3OGJiYWRhYTlhZmYzZTc1YTRmNzkiLCJpYXQiOjE2NjU5NzYxODgsImV4cCI6MTY2NjA2MjU4OH0.dZjnJb8R9N5nKtWPSbMkpIBMZm2duYYnmryOVWqrrqw"
+        // console.log(`hello ${token}`)
+const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ3OGJiYWRhYTlhZmYzZTc1YTRmNzkiLCJpYXQiOjE2NjU5ODc2MDcsImV4cCI6MTY2NjA3NDAwN30.Ol-B7s8qkVlv5Yrng6rpYCf8EC99wWwluz-d_jzlXtQ"        
         try {
           const res = await fetch("/match", {
             method: "GET",
@@ -56,7 +56,6 @@ export default function Matches() {
 
 
   useEffect(() => {
-    login()
     getMatchData()
   }, []);
 
