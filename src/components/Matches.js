@@ -41,10 +41,10 @@ export default function Matches() {
   useEffect(() => {
     getToken()
       .then((res) => getMatchData(res.data.token))
-      .then((res) => setMatchData(res.data))
+      .then((res) => setMatchData(JSON.stringify(res.data)))
       .then(() => setLoading(false))
       .catch(console.error);
   }, []);
 
-  return <div>{loading ? "loading" : JSON.stringify(matchData)}</div>;
+  return <div>{loading ? "loading" : console.log(matchData)}</div>;
 }
