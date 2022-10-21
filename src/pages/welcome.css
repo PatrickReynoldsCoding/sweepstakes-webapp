@@ -1,15 +1,47 @@
-.button-container {
+.welcome-wrapper {
+  color: white;
   display: flex;
-  flex-wrap: wrap;
-  color: #9b59b6;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
 }
-
-.button {
+.welcome-wrapper .welcome-container .welcome-container-row1 {
+  padding-top: 40vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.welcome-wrapper .welcome-container .welcome-container-row1 .welcome-text {
+  flex-direction: row;
+  text-align: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: oblique;
+  font-weight: 200;
+  font-size: 66px;
+}
+.welcome-wrapper .welcome-container .welcome-container-row2 {
+  padding: 2px;
+  align-items: center;
+}
+.welcome-wrapper .welcome-container .welcome-container-row2 .welcome-message {
+  display: flex;
+  justify-content: center;
+}
+.welcome-wrapper .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding-bottom: 50vh;
+}
+.welcome-wrapper .button-container .button {
   max-width: 300px;
   width: 80%;
-  background-color: #0b71f1;
-  margin-top: 10px;
-  padding: 15px 30px;
+  background-color: #2702cd;
+  color: white;
+  text-align: top;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);

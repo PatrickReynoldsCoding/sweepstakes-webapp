@@ -1,15 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import "./welcome.css"
 export default function Welcome() {
   return (
     <>
       <div className="welcome-wrapper">
         <div className="welcome-container">
-          <div className="welcome-icon"></div>
-          <div className="welcome-text">Welcome!</div>
+          <div className="welcome-container-row1">
+            <div className="welcome-icon">ICON</div>
+            <div className="welcome-text">Welcome!</div>
+          </div>
+          <div className="welcome-container-row2">
+            <div className="welcome-message">Chowie and Paddy invite you to join the 2022 worldcup sweepstakes</div>
+          </div>        
         </div>
-        <div className="welcome-message">Chowie and Paddy invite you to join the 2022 worldcup sweepstakes</div>
+        
         <div className="button-container">
           <Link
             to="/registration"
@@ -27,8 +33,8 @@ export default function Welcome() {
               login
             </div>
           </Link>
-        </div>
       </div>
+    </div>
     </>
   );
 }
