@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 export default function Welcome() {
   return (
     <>
-      <section className="welcomeBackground">
-        <div className="welcomeContainer">
-          Chowie and Paddy welcome you to participate in the 2022 world cup
-          sweepstakes!
+      <div className="welcome-wrapper">
+        <div className="welcome-container">
+          <div className="welcome-icon"></div>
+          <div className="welcome-text">Welcome!</div>
         </div>
-        <div className="buttonContainer">
+        <div className="welcome-message">Chowie and Paddy invite you to join the 2022 worldcup sweepstakes</div>
+        <div className="button-container">
           <Link
             to="/registration"
             style={{ textDecoration: "none", color: "none" }}
@@ -27,7 +28,7 @@ export default function Welcome() {
             </div>
           </Link>
         </div>
-      </section>
+      </div>
     </>
   );
 }
