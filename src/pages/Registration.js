@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import "../App.css";
+import "./Registration.css"
 
 function Registration() {
   const {
@@ -25,7 +26,7 @@ function Registration() {
 
   return (
     <>
-      <div className="container">
+      <div className="reg-container">
         <div className="title">2022 World Cup Sweepstakes</div>
         <div className="content">
           {/* change action to redirect */}

@@ -4,10 +4,11 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./App.css";
 
+
 // Page Components
-import Registration from "./components/Registration";
-import Welcome from "./components/Welcome";
-import Matches from "./components/Matches";
+import Registration from "./pages/Registration";
+import Welcome from "./pages/Welcome";
+import Matches from "./pages/Matches";
 // import { db } from "./firebase-config";
 // import {
 //   collection,
