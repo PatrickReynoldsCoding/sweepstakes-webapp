@@ -50,14 +50,14 @@ export default function Matches() {
       .catch(console.error);
   }, []);
 
-//   return <div>{ loading ? <Spinner animation="border" variant="primary"/> : 
+  return <div>{ loading ? <Spinner animation="border" variant="primary"/> : 
 
-// matchData.map(match => {
-//   return <div className="container-fluid" key={match._id}>
-//           Group: {match.group} - Matchday {match.matchday} of 3<br/>
-//           {match.home_team_en} vs {match.away_team_en} <br/>
-//           {match.local_date} 
-//         </div>
-// })
-// }</div>;
+matchData.map(match => {
+  return <div className="container-fluid" key={match._id}>
+          Group: {match.group} - Matchday {match.matchday} of 3<br/>
+          {match.home_team_en} vs {match.away_team_en} <br/>
+          {match.local_date} 
+        </div>
+})
+}</div>;
 }

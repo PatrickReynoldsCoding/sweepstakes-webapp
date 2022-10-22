@@ -1,0 +1,23 @@
+* {
+  color: white;
+}
+
+.leadercard-container {
+  background-color: #171819;
+  display: flex;
+  flex-direction: row;
+
+  .team-container {
+  display: flex;
+  }
+
+  .teamdata-container {
+  display: flex;
+
+    .teamdata-box {
+      display: block;
+    }
+  }
+
+
+}
