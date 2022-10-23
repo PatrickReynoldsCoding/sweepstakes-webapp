@@ -66,11 +66,11 @@ export default function Leaderboard() {
       {loading ? (
         <Spinner animation="border" variant="primary" />
       ) : (
-        dummyStandingData.data.map((group) => { //update to real data 
+        dummyStandingData.data.map((group) => { // UPDATE THIS TO standingData and uncomment the above useEffect
           return (
             <div key={group._id}> 
               {group.teams.map((team) => {
-                return team.name_en
+                return <LeaderboardCard team={team} key={team.team_id}/>
               })}
 
             </div>
