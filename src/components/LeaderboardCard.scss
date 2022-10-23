@@ -10,11 +10,10 @@
   gap: 40px;
   padding: 15px 0px;
   border-radius: 5px;
-  
 
   .team-container {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
     .team-icon {
       padding: 0px 10px;
     }
@@ -24,7 +23,6 @@
     display: flex;
     text-align: center;
     padding: 0px 10px;
-    
 
     .teamdata-box {
       display: block;
@@ -37,6 +35,4 @@
       }
     }
   }
-
-
 }

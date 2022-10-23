@@ -1,6 +1,9 @@
-import React from 'react'
+import React from "react";
 
-import './Leaderboardcard.css'
+import "./Leaderboardcard.css";
+
+// Components
+import TeamDataBox from "./TeamDataBox";
 
 export default function () {
   return (
@@ -15,28 +18,28 @@ export default function () {
             <div className="databox-header">MP</div>
             <div className="databox-value">3</div>
           </div>
-       <div className="teamdata-box">
+          <div className="teamdata-box">
             <div className="databox-header">MP</div>
             <div className="databox-value">3</div>
           </div>
-       <div className="teamdata-box">
+          <div className="teamdata-box">
             <div className="databox-header">MP</div>
             <div className="databox-value">3</div>
           </div>
-       <div className="teamdata-box">
+          <div className="teamdata-box">
             <div className="databox-header">MP</div>
             <div className="databox-value">3</div>
           </div>
-       <div className="teamdata-box">
+          <div className="teamdata-box">
             <div className="databox-header">MP</div>
             <div className="databox-value">3</div>
           </div>
-       <div className="teamdata-box">
+          <div className="teamdata-box">
             <div className="databox-header">MP</div>
             <div className="databox-value">3</div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

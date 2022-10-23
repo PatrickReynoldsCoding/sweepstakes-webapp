@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import "./App.css";
 
-
 // Page Components
 import Registration from "./pages/Registration";
 import Welcome from "./pages/Welcome";

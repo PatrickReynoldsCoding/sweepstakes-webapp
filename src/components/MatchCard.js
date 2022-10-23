@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-export default function MatchCard({props}) {
+export default function MatchCard({ props }) {
   return (
     <div>
-          <table class="matchCard">
+      <table class="matchCard">
         <tbody>
           <tr>
             <td colspan="6">
@@ -40,7 +40,8 @@ export default function MatchCard({props}) {
             </td>
             <td class="cardText">
               <div data-df-team-mid="/m/046zk0">
-                <span>Qatar</span><span></span>
+                <span>Qatar</span>
+                <span></span>
               </div>
             </td>
             <td></td>
@@ -55,7 +56,8 @@ export default function MatchCard({props}) {
             </td>
             <td class="cardText">
               <div class="ellipsisize" data-df-team-mid="/m/03zj_3">
-                <span>Ecuador</span><span></span>
+                <span>Ecuador</span>
+                <span></span>
               </div>
             </td>
             <td></td>
@@ -67,5 +69,5 @@ export default function MatchCard({props}) {
         </tbody>
       </table>
     </div>
-  )
+  );
 }
