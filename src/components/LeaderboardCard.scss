@@ -14,8 +14,13 @@
   .team-container {
     display: flex;
     align-items: center;
+    gap: 35px;
     .team-icon {
+      display: flex;
+      justify-content: flex-start;
       padding: 0px 10px;
+      width: 24px; 
+      height: 24px;
     }
   }
 
