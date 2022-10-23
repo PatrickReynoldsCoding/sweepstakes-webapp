@@ -47,7 +47,6 @@ export default function Leaderboard() {
       .then((res) => getStandingData(res.data.token))
       .then((res) => setStandingData(JSON.parse(JSON.stringify(res.data))))
       .then(() => setLoading(false))
-      .then(() => console.log(standingData))
       .catch(console.error);
   }, []);
 
@@ -56,12 +55,10 @@ export default function Leaderboard() {
       {loading ? (
         <Spinner animation="border" variant="primary" />
       ) : (
-        standingData.map((team) => {
+        standingData.map((group) => {
           return (
-            <div key={team._id}>
-              Group: {match.group} - Matchday {match.matchday} of 3<br />
-              {match.home_team_en} vs {match.away_team_en} <br />
-              {match.local_date}
+            <div key={group._id}> 
+              {group.teams[0].name_en}
             </div>
           );
         })
