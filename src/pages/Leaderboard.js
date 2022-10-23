@@ -69,8 +69,10 @@ export default function Leaderboard() {
         dummyStandingData.data.map((group) => { //update to real data 
           return (
             <div key={group._id}> 
-              {/* {group.teams[0].name_en} */}
-         Qatar, Ecuador, Senegal and Nederland
+              {group.teams.map((team) => {
+                return team.name_en
+              })}
+
             </div>
           );
         })
